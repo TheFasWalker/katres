@@ -1,0 +1,40 @@
+@import "normalize";
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src:
+            url("../fonts/#{$file_name}.woff") format("woff"),
+            url("../fonts/#{$file_name}.woff2") format("woff2"),
+            url("../fonts/#{$file_name}.ttf") format("ttf") ;
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@import "fonts";
+*{
+    text-decoration: none;
+    list-style-type:none;
+}
+.container{
+    width: 1172px;
+    margin: 0 auto;
+}
+.buttonZero{
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+.wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+@import "_header";
+@import "_hero";
+@import "_main";
+@import "_call-back-popup";

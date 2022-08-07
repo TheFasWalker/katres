@@ -1,0 +1,236 @@
+.hero__container{
+    width: 100%;
+}
+.hero__slider{
+    max-height: 750px;
+}
+.hero__swiper{}
+.hero__slide{
+    position: relative;
+}
+.hero__picture{
+    width: 100%;
+    display: block;
+    position: relative;
+    padding-bottom: 39%;
+}
+.hero__img{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+.slide__content{
+    position: absolute;
+    top: 28%;
+    left: 20%;
+}
+.slide__title{
+    max-width: 900px;
+    h2{
+        padding: 0;
+        margin: 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 94px;
+        line-height: 110px;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.47);
+    }
+}
+.slide__subtitle{
+    max-width: 900px;
+    margin-top: 34px;
+    p{
+        padding: 0;
+        margin: 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 38px;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.47);
+    }
+}
+.hero__arrow{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 12px 10px rgba(0, 0, 0, 0.04);
+    position: absolute;
+    top:47%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height: 25px;
+        width: 14px;
+    }
+}
+.hero__arrow-prev{
+    left: 191px;
+}
+.hero__arrow-next{
+    right: 191px;
+}
+.arrow-prev_img{}
+.hero__pagination{}
+.arrow-next_img{
+    transform: rotate(180deg);
+}
+.hero__pagination{
+    display: flex;
+    z-index: 1;
+    width: fit-content;
+    .swiper-pagination-bullet{
+        display: block;
+        background: rgba(255, 255, 255, 0.5);
+        margin-right: 21px !important;
+        border-radius: 20px;
+        width: 49px;
+        height: 7px;
+    }
+    .swiper-pagination-bullet-active{
+        background: rgba(251, 218, 27, 0.95);
+    }
+}
+.hero__pagination-wrapper{
+    position: absolute;
+    left: 40%;
+    width: fit-content;
+    bottom: 8%;
+    z-index: 1;
+}
+
+@media(max-width:1600px){
+    .hero__arrow-next{right: 50px;}
+    .hero__arrow-prev{left:50px}
+    .hero__arrow{
+        height: 40px;
+        width: 40px;
+    }
+    .hero__arrow img {
+        height: 22px;
+        width: 11px;
+    }
+    .slide__content{
+        top: 15%;
+        left:15%;
+    }
+}
+@media(max-width:1300px){
+
+    .slide__title{
+        max-width: 750px;
+        h2 {
+            font-size: 75px;
+            line-height: 83px;
+        }
+    }
+    .slide__subtitle{
+       p{ font-size: 20px;}
+        max-width: 750px;
+    }
+    .hero__arrow{
+        top: 35%;
+    }
+    .hero__pagination-wrapper{left: 35%;}
+}
+@media(max-width:1024px){
+    .slide__title h2 {
+        font-size: 62px;
+        line-height: 100%;
+    }
+    .slide__title{
+        max-width: 600px;
+    }
+    .slide__subtitle {
+        max-width: 600px;
+        margin-top: 20px;
+    }
+}
+@media(max-width:960px){
+    .slide__subtitle p {
+        font-size: 18px;
+    }
+    .slide__title h2 {
+        font-size: 55px;
+    }
+    .slide__title,
+    .slide__subtitle {
+        max-width: 530px;
+    }
+    .slide__content {
+        top: 12%;
+        left: 12%;
+    }
+    .hero__arrow-next {
+        right: 30px;
+    }
+    .hero__arrow-prev {
+        left: 30px;
+    }
+}
+@media(max-width:780px){
+    .hero__arrow{
+        display: none;
+    }
+    .hero__pagination-wrapper {
+        left: 25%;
+    }
+    .slide__title h2 {
+        font-size: 46px;
+    }
+    .slide__subtitle p {
+        line-height: 28px;
+    }
+}
+@media(max-width:640px){
+    .hero__slider{
+        height: fit-content;
+        max-height: fit-content;
+    }
+    .hero__img{
+        object-fit: cover;
+    }
+    .hero__picture{
+        padding-bottom: 94%;
+    }
+    .slide__subtitle p {
+        line-height: 25px;
+    }
+    .slide__title h2 {
+        font-size: 30px;
+    }
+    .slide__content {
+        top: auto;
+        left: 0;
+        width: 300px;
+        padding: 0 15px;
+        bottom: 80px;
+    }
+    .hero__pagination .swiper-pagination-bullet{
+        width: 35px;
+        height: 5px;
+        margin-left: 15px;
+    }
+    .hero__pagination-wrapper {
+        left: 14%;
+    }
+}
+@media(max-width:340px){
+    .slide__content {
+        width: 100%;
+        padding: 0 10px;
+    }    
+    .slide__content {
+
+        padding: 0 10px;
+    }
+}
