@@ -39,6 +39,7 @@ new Swiper ('.swiper',{
 
 // Обратный звонок
 let headerCallBack = document.querySelector('.header__callback_dextop');
+let headerCallBackMob = document.querySelector('.header__callback_mobile');
 let callBackBlock = document.querySelector('.call-back__wrapper');
 let callBackClose = document.querySelector('.call-back__close');
 let callBackTabableElemtnts = document.querySelector('.call-back__container')
@@ -63,6 +64,14 @@ headerCallBack.addEventListener('click',function(){
     }
 
 });
+headerCallBackMob.addEventListener('click',function(){
+    if(callBackCondition){
+        openCallBack()
+    }else{
+        closeCallBack()
+    }
+
+});
 callBackClose.addEventListener('click',function(){
     closeCallBack()
 });
@@ -73,34 +82,49 @@ let callbackForm = document.querySelector('.call-back__form'),
     callBackName =document.querySelector('.call-back__name'),
     callBackTel =document.querySelector('.call-back__tel'),
     callBackCheckbox =document.querySelector('.call-back__checkbox'),
-    callBackConfirmLabel = document.querySelector('.confirm__label'),
-    callbackErors =[];
+    callBackConfirmLabel = document.querySelector('.confirm__label');
     
-
+function validateTel(phone){
+    let re = /^[0-9\s]*$/;
+    return re.test(String(phone))
+}
 
 callbackForm.onsubmit = function(){
     // event.preventDefault();
-    let nameVal = callBackName.value,
-        telVal = callBackTel.value;
+    let telVal = callBackTel.value,
+        emptyInputs = Array.from(callBackInputs).filter(input=> input.valuse === '');
         
         callBackInputs.forEach(function(input){
                 if(input.value ===''){
                     input.classList.add('error');
-                    callbackErors.push(input);
                     console.log('поле пустое')
                 }else{
                     input.classList.remove('error')
                 }
         })
-         if (callbackErors.length !== 0){
-             console.log(callbackErors)
-             return false
-         }
+
         if (callBackCheckbox.checked){
             callBackConfirmLabel.classList.remove('error')
         }else{
             console.log('not checked')
             callBackConfirmLabel.classList.add('error')
+            return false
+        }
+        if(emptyInputs.length !== 0){
+            console.log('some input is  empty');
+            return false
+        }
+        if(!validateTel(telVal)){
+            callBackTel.classList.add('error');
+            return false;
+        }else{
+            callBackTel.classList.remove('error');
+            
+        }
+
+
+        if (callbackErors.length !== 0){
+            console.log(callbackErors)
             return false
         }
 

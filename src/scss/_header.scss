@@ -123,6 +123,7 @@
     background: #FFFFFF;
     box-shadow: 0px 9px 7px rgba(0, 0, 0, 0.25);
     display: none;
+    z-index: 10;
     &_visible{
         display: block;
     }
@@ -298,6 +299,7 @@
         padding-left: 0;
         padding-right: 0;
         box-shadow: none;
+
     }
     .hidden-section__item:not(:last-child) .hidden-section__link {
         border-bottom: none;
